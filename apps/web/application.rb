@@ -1,5 +1,5 @@
-require 'hanami/helpers'
-require 'hanami/assets'
+require "hanami/helpers"
+require "hanami/assets"
 
 module Web
   class Application < Hanami::Application
@@ -16,10 +16,9 @@ module Web
       # Relative load paths where this application will recursively load the code.
       # When you add new directories, remember to add them here.
       #
-      load_paths << [
-        'controllers',
-        'views'
-      ]
+      load_paths << %w[
+        controllers
+        views]
 
       # Handle exceptions with HTTP statuses (true) or don't catch them (false).
       # Defaults to true.
@@ -34,7 +33,7 @@ module Web
       # Routes definitions for this application
       # See: http://www.rubydoc.info/gems/hanami-router#Usage
       #
-      routes 'config/routes'
+      routes "config/routes"
 
       # URI scheme used by the routing system to generate absolute URLs
       # Defaults to "http"
@@ -112,7 +111,7 @@ module Web
 
       # The relative path to templates
       #
-      templates 'templates'
+      templates "templates"
 
       ##
       # ASSETS
@@ -148,7 +147,7 @@ module Web
         # Specify sources for assets
         #
         sources << [
-          'assets'
+          "assets"
         ]
       end
 

@@ -1,6 +1,6 @@
-require 'hanami/model'
-require 'hanami/mailer'
-Dir["#{ __dir__ }/github_groove/**/*.rb"].each { |file| require_relative file }
+require "hanami/model"
+require "hanami/mailer"
+Dir["#{__dir__}/github_groove/**/*.rb"].each { |file| require_relative file }
 
 Hanami::Model.configure do
   ##
@@ -16,7 +16,7 @@ Hanami::Model.configure do
   #    adapter type: :sql, uri: 'postgres://localhost/github_groove_development'
   #    adapter type: :sql, uri: 'mysql://localhost/github_groove_development'
   #
-  adapter type: :file_system, uri: ENV['GITHUB_GROOVE_DATABASE_URL']
+  adapter type: :file_system, uri: ENV["GITHUB_GROOVE_DATABASE_URL"]
 
   ##
   # Database mapping
@@ -41,7 +41,7 @@ Hanami::Model.configure do
 end.load!
 
 Hanami::Mailer.configure do
-  root "#{ __dir__ }/github_groove/mailers"
+  root "#{__dir__}/github_groove/mailers"
 
   # See http://hanamirb.org/guides/mailers/delivery
   delivery do
