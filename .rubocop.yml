@@ -113,3 +113,6 @@ Style/RegexpLiteral:
 
 Style/DotPosition:
   EnforcedStyle: trailing
+
+Style/ClassAndModuleChildren:
+  Enabled: false

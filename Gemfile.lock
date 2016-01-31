@@ -1,6 +1,20 @@
+GIT
+  remote: git://github.com/Fodoj/groovehq.git
+  revision: 1f8671d3a23b6f8d5b6649c23b899c0a69a78505
+  specs:
+    groovehq (1.0.4)
+      activesupport
+      httparty
+
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (4.2.5.1)
+      i18n (~> 0.7)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.3, >= 0.3.4)
+      tzinfo (~> 1.1)
     addressable (2.4.0)
     ast (2.2.0)
     byebug (8.2.1)
@@ -54,16 +68,25 @@ GEM
     http_router (0.11.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
+    httparty (0.13.7)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    i18n (0.7.0)
+    json (1.8.3)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
     mime-types (2.99)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
+    multi_xml (0.5.5)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     parser (2.3.0.2)
       ast (~> 2.2)
+    pg (0.18.4)
+    pony (1.11)
+      mail (>= 2.0)
     powerpack (0.1.1)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -88,7 +111,10 @@ GEM
       rack (>= 1.0)
     slop (3.6.0)
     thor (0.19.1)
+    thread_safe (0.3.5)
     tilt (2.0.2)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
     url_mount (0.2.1)
       rack
     xpath (2.0.0)
@@ -100,9 +126,12 @@ PLATFORMS
 DEPENDENCIES
   bundler
   capybara
+  groovehq!
   hanami (= 0.7.0)
   hanami-model (~> 0.5)
   minitest
+  pg
+  pony
   pry-byebug
   rake
   rubocop (~> 0.36)

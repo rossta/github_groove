@@ -4,6 +4,10 @@ gem "bundler"
 gem "rake"
 gem "hanami",       "0.7.0"
 gem "hanami-model", "~> 0.5"
+gem "pg"
+
+gem "pony"
+gem "groovehq", github: "Fodoj/groovehq"
 
 group :test do
   gem "minitest"

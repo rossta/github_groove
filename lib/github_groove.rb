@@ -16,7 +16,7 @@ Hanami::Model.configure do
   #    adapter type: :sql, uri: 'postgres://localhost/github_groove_development'
   #    adapter type: :sql, uri: 'mysql://localhost/github_groove_development'
   #
-  adapter type: :file_system, uri: ENV["GITHUB_GROOVE_DATABASE_URL"]
+  adapter type: :sql, uri: ENV["GITHUB_GROOVE_DATABASE_URL"]
 
   ##
   # Database mapping
@@ -30,6 +30,15 @@ Hanami::Model.configure do
   # Alternatively, you can use a block syntax like the following:
   #
   mapping do
+    collection :tickets do
+      entity Ticket
+      repository TicketRepository
+
+      attribute :title, String
+      attribute :priority, String
+      attribute :number, Integer
+      attribute :summary, String
+    end
     # collection :users do
     #   entity     User
     #   repository UserRepository

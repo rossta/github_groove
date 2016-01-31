@@ -1,0 +1,15 @@
+<h1>Github/Groove</h1>
+<h2>Tickets</h2>
+
+<div id="tickets">
+<% if tickets.any? %>
+  <% tickets.each do |ticket| %>
+    <div class="ticket">
+      <h3><%= ticket.title %><span class="subtle"><%= ticket.number %></span></h3>
+      <p><%= ticket.summary %></p>
+    </div>
+  <% end %>
+<% else %>
+  <p class="placeholder">There are no tickets yet.</p>
+<% end %>
+</div>
