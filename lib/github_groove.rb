@@ -34,6 +34,7 @@ Hanami::Model.configure do
       entity Ticket
       repository TicketRepository
 
+      attribute :id, Integer
       attribute :title, String
       attribute :priority, String
       attribute :number, Integer

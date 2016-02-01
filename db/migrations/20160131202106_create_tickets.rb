@@ -6,7 +6,7 @@ Hanami::Model.migration do
       column :title, String, null: false
       column :priority, String
       column :number, Integer, null: false
-      column :summary, "text[]"
+      column :summary, "text"
     end
   end
 end

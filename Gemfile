@@ -7,7 +7,7 @@ gem "hanami-model", "~> 0.5"
 gem "pg"
 
 gem "pony"
-gem "groovehq", github: "Fodoj/groovehq"
+gem "groovehq", github: "rossta/groovehq", branch: "paginated_collection"
 
 group :test do
   gem "minitest"

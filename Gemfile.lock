@@ -1,8 +1,9 @@
 GIT
-  remote: git://github.com/Fodoj/groovehq.git
-  revision: 1f8671d3a23b6f8d5b6649c23b899c0a69a78505
+  remote: git://github.com/rossta/groovehq.git
+  revision: 1143207488cf3b379170cd525c06494c8b8f22b2
+  branch: paginated_collection
   specs:
-    groovehq (1.0.4)
+    groovehq (1.0.5)
       activesupport
       httparty
 

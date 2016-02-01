@@ -2,6 +2,15 @@ class Ticket
   include Hanami::Entity
 
   attributes :title, :priority, :number, :summary
+
+  def self.from_api(resource)
+    Ticket.new(
+      title: resource.title,
+      number: resource.number,
+      summary: resource.summary,
+      priority: resource.priority
+    )
+  end
 end
 
 # Hash from API
