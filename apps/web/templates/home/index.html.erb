@@ -2,8 +2,8 @@
 
 <p>
 <% if signed_in? %>
-  Welcome, <%= current_user.display_name %>
+  Welcome, <%= current_user.display_name %> | <%= link_to "Sign out", "/auth/signout" %>
 <% else %>
-  <%= link_to "Login with Github", "/auth/github" %>
+  <%= link_to "Sign in with Github", "/auth/github" %>
 <% end %>
 </p>

@@ -13,6 +13,7 @@ gem "warden"
 
 group :test do
   gem "minitest"
+  gem "capybara_minitest_spec"
   gem "capybara"
   gem "rubocop", "~> 0.36"
   gem "m"

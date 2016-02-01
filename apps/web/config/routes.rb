@@ -1,4 +1,5 @@
-get '/session', to: 'session#failure'
+get '/auth/signout', to: 'session#destroy'
+get '/auth/failure', to: 'session#failure'
 get "/auth/:provider/callback", to: "session#new"
 get "/tickets", to: "tickets#index"
 get "/", to: "home#index"

@@ -1,8 +1,8 @@
 require 'spec_helper'
-require_relative '../../../../apps/web/controllers/session/failure'
+require_relative '../../../../apps/web/controllers/session/destroy'
 
-describe Web::Controllers::Session::Failure do
-  let(:action) { Web::Controllers::Session::Failure.new }
+describe Web::Controllers::Session::Destroy do
+  let(:action) { Web::Controllers::Session::Destroy.new }
   let(:params) { {'omniauth.auth' => {}, 'warden' => warden, 'rack.session' => {} } }
 
   it "it redirects" do

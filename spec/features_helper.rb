@@ -3,6 +3,7 @@ require_relative "./spec_helper"
 
 require "capybara"
 require "capybara/dsl"
+require "capybara_minitest_spec"
 
 Capybara.app = Hanami::Container.new
 
