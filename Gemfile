@@ -8,11 +8,14 @@ gem "pg"
 
 gem "pony"
 gem "groovehq", github: "rossta/groovehq", branch: "paginated_collection"
+gem "omniauth-github", github: "intridea/omniauth-github"
+gem "warden"
 
 group :test do
   gem "minitest"
   gem "capybara"
   gem "rubocop", "~> 0.36"
+  gem "m"
 end
 
 group :test, :development do

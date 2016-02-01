@@ -1,1 +1,9 @@
 <h1>Github/Groove</h1>
+
+<p>
+<% if signed_in? %>
+  Welcome, <%= current_user.display_name %>
+<% else %>
+  <%= link_to "Login with Github", "/auth/github" %>
+<% end %>
+</p>

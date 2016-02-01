@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Web</title>
+    <title>Github/Groove</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <%= favicon %>
   </head>
   <body>
+    <div class="flash-messages">
+      <% %i(error notice success).each do |type| %>
+        <% if flash[type] %>
+          <div class="flash-message-<%= type %>"> <%= flash[type] %> </div>
+        <% end %>
+      <% end %>
+    </div>
+
     <%= yield %>
   </body>
 </html>
