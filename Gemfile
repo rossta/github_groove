@@ -10,6 +10,7 @@ gem "pony"
 gem "groovehq", github: "rossta/groovehq", branch: "paginated_collection"
 gem "omniauth-github", github: "intridea/omniauth-github"
 gem "warden"
+gem "octokit"
 
 group :test do
   gem "minitest"

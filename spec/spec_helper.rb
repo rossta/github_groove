@@ -4,6 +4,7 @@ ENV["HANAMI_ENV"] ||= "test"
 require_relative "../config/environment"
 require "minitest/autorun"
 require "minitest/pride" # awesome colorful output
+require "webmock/minitest"
 require "pry"
 
 require_relative "./support/omniauth"
