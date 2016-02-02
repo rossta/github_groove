@@ -52,6 +52,7 @@ Hanami::Model.configure do
       attribute :nickname, String
       attribute :image, String
       attribute :email, String
+      attribute :project_id, Integer
     end
 
     collection :projects do

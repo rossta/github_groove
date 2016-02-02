@@ -1,0 +1,36 @@
+<h1>Github/Groove</h1>
+<h2>Your Groove Project Token</h2>
+
+<div id="project" class="project">
+  <% if project %>
+    <input value="<%= project.groove_access_token %>" disabled type="text" />
+    <p class="notice">Reminder: keep your token private</p>
+  <% else %>
+    <p class="placeholder">Please enter your Groove API access token from your groove settings page.</p>
+
+    <% unless params.valid? %>
+      <div class="errors">
+        <h3>There was a problem with your submission</h3>
+        <ul>
+          <% params.errors.each do |error| %>
+            <li><%= error.attribute_name %> is required</li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%=
+      form_for :project, "/project" do
+        div class: "input" do
+          label      :groove_access_token
+          text_field :groove_access_token, style: "width:300px"
+        end
+
+        div class: "controls" do
+          submit "Save Project"
+        end
+      end
+    %>
+  <% end %>
+
+</div>

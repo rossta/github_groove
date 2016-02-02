@@ -3,9 +3,7 @@ module Web::Controllers::Session
     include Web::Action
 
     def call(params)
-      warden.logout
-      flash[:notice] = "There was a problem logging you in"
-      redirect_to "/"
+      status 404, "Not found"
     end
   end
 end

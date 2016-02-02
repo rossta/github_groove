@@ -24,7 +24,10 @@ module MiniTest
 
     def warden
       @warden ||= begin
-                    manager = Warden::Manager.new(nil)
+                    opts = -> {
+                      [404, { 'Content-Type' => 'text/plain' }, ['Not found!']]
+                    }
+                    manager = Warden::Manager.new(opts)
                     Warden::Proxy.new({'rack.session' => {}}, manager)
                   end
     end

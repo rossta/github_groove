@@ -7,7 +7,7 @@ describe Web::Controllers::Session::Failure do
 
   it "it redirects" do
     response = action.call(params)
-    response[0].must_equal 302
+    response[0].must_equal 404
   end
 
   it "logs out user" do

@@ -17,6 +17,7 @@ group :test do
   gem "capybara"
   gem "rubocop", "~> 0.36"
   gem "m"
+  gem "launchy"
 end
 
 group :test, :development do
