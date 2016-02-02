@@ -1,7 +1,7 @@
 class User
   include Hanami::Entity
 
-  attributes :id, :github_id, :name, :nickname, :image, :email, :project_id
+  attributes :id, :github_id, :name, :nickname, :image, :email, :project_id, :github_access_token
 
   def display_name
     name.presence || nickname || "Friend"

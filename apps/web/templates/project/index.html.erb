@@ -3,34 +3,50 @@
 
 <div id="project" class="project">
   <% if project %>
-    <input value="<%= project.groove_access_token %>" disabled type="text" />
     <p class="notice">Reminder: keep your token private</p>
   <% else %>
     <p class="placeholder">Please enter your Groove API access token from your groove settings page.</p>
+  <% end %>
 
-    <% unless params.valid? %>
-      <div class="errors">
-        <h3>There was a problem with your submission</h3>
-        <ul>
-          <% params.errors.each do |error| %>
-            <li><%= error.attribute_name %> is required</li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  <% unless params.valid? %>
+    <div class="errors">
+      <h3>There was a problem with your submission</h3>
+      <ul>
+        <% params.errors.each do |error| %>
+          <li><%= error.attribute_name %> is required</li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-    <%=
-      form_for :project, "/project" do
-        div class: "input" do
-          label      :groove_access_token
-          text_field :groove_access_token, style: "width:300px"
+  <%=
+    form_for :project, "/project", values: { project: project } do
+      div class: "row" do
+        div class: "large-2 columns" do
+          label :groove_access_token
         end
-
-        div class: "controls" do
-          submit "Save Project"
+        div class: "large-10 columns" do
+          text_field :groove_access_token
         end
       end
-    %>
-  <% end %>
+
+      div class: "row" do
+        div class: "large-2 columns" do
+          label      :github_repository
+        end
+        div class: "large-10 columns" do
+          text_field :github_repository, placeholder: "e.g., rossta/project"
+        end
+      end
+
+      div class: "row controls" do
+        div class: "large-2 columns" do
+        end
+        div class: "large-10 columns" do
+          submit "Save Project", class: "button"
+        end
+      end
+    end
+  %>
 
 </div>

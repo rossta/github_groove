@@ -16,6 +16,7 @@ class UserRepository
     attrs[:nickname] = omniauth.info.nickname
     attrs[:image] = omniauth.info.image
     attrs[:email] = omniauth.info.email || omniauth.extra.raw_info.email
+    attrs[:github_access_token] = omniauth.credentials.token
 
     if found
       found.update(attrs)
@@ -23,5 +24,10 @@ class UserRepository
     else
       create(User.new(attrs.merge(github_id: github_id)))
     end
+  end
+
+  def self.update_user_project(user, project)
+    user.project_id = project.id
+    update(user)
   end
 end

@@ -5,11 +5,9 @@
     Welcome, <%= current_user.display_name %> | <%= link_to "Sign out", "/auth/signout" %>
   </p>
 
-  <% if !current_user.project %>
-    <p>
-      <%= link_to "Connect to Groove", "/project" %>
-    </p>
-  <% end %>
+  <p>
+    <%= link_to_project %>
+  </p>
 <% else %>
   <p>
     <%= link_to "Sign in with Github", "/auth/github" %>

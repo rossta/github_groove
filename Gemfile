@@ -18,6 +18,7 @@ group :test do
   gem "rubocop", "~> 0.36"
   gem "m"
   gem "launchy"
+  gem "webmock"
 end
 
 group :test, :development do

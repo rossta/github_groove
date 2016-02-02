@@ -8,14 +8,14 @@ module Web::Controllers::Project
     params do
       param :project do
         param :groove_access_token,  presence: true
+        param :github_repository,  presence: true
       end
     end
 
     def call(params)
       if params.valid?
-        @project = ProjectRepository.create(Project.new(params[:project]))
-        current_user.project_id = @project.id
-        UserRepository.update(current_user)
+        @project = ProjectRepository.find_or_create_by_params(params[:project])
+        UserRepository.update_user_project(current_user, @project)
 
         flash[:notice] = "Your project has been saved: #{current_user.project_id}"
 

@@ -11,10 +11,12 @@ describe Web::Controllers::Project::Create do
   end
 
   describe "authenticated" do
-    let(:project_params) { Hash[project: { groove_access_token: "aabbcc" }] }
+    let(:project_params) { Hash[project: { groove_access_token: "aabbcc", github_repository: "rossta/github_groove" }] }
 
     before do
-      user = UserRepository.create(User.new(github_id: 123, nickname: "rossta"))
+      user = UserRepository.create(
+        User.new(github_id: 123, nickname: "rossta", github_access_token: "aaa")
+      )
       warden.set_user user
     end
 

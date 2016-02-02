@@ -12,7 +12,9 @@ describe Web::Controllers::Project::Index do
 
   describe "authenticated" do
     let(:project) { ProjectRepository.create(Project.new(groove_access_token: "aaa")) }
-    let(:user) { UserRepository.create(User.new(github_id: 123, nickname: "rossta", project_id: project.id)) }
+    let(:user) { UserRepository.create(
+      User.new(github_id: 123, nickname: "rossta", project_id: project.id, github_access_token: "aaa")
+    )}
 
     before do
       warden.set_user user

@@ -7,7 +7,7 @@ module Web::Controllers::Project
     before :authenticate!
 
     def call(params)
-      @project = current_user.project
+      @project = current_user.project || Project.new
     end
   end
 end

@@ -53,6 +53,7 @@ Hanami::Model.configure do
       attribute :image, String
       attribute :email, String
       attribute :project_id, Integer
+      attribute :github_access_token, String
     end
 
     collection :projects do
@@ -61,6 +62,7 @@ Hanami::Model.configure do
 
       attribute :id, Integer
       attribute :groove_access_token, String
+      attribute :github_repository, String
     end
   end
 end.load!

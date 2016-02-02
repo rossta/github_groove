@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
   <head>
-    <title>Github/Groove</title>
     <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <%= stylesheet 'foundation', 'app' %>
     <%= favicon %>
   </head>
   <body>
@@ -16,6 +16,12 @@
       <% end %>
     </div>
 
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="large-12 columns">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
