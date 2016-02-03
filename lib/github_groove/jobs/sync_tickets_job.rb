@@ -6,5 +6,6 @@ class SyncTicketsJob
     return unless project
 
     project.sync!
+    SuckerPunch.logger.info("Project sync'd!")
   end
 end

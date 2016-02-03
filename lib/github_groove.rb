@@ -88,3 +88,4 @@ Warden::Manager.serialize_from_session do |id|
 end
 
 SuckerPunch.logger = Logger.new(STDOUT)
+SuckerPunch.exception_handler = -> (ex, klass, args) { SuckerPunch.logger.info("#{klass}: #{args.inspect} " + ex.message) }
