@@ -1,15 +1,24 @@
-<h1>Github/Groove</h1>
-
 <% if signed_in? %>
-  <p>
-    Welcome, <%= current_user.display_name %> | <%= link_to "Sign out", "/auth/signout" %>
-  </p>
+  <div>
+    <h2>Dashboard</h2>
+    <p>
+      Welcome, <%= current_user.display_name %> | <%= link_to "Sign out", "/auth/signout" %>
+    </p>
 
-  <p>
-    <%= link_to_project %>
-  </p>
+    <p>
+      <%= link_to_tickets %>
+    </p>
+
+    <p>
+      <%= link_to_project %>
+    </p>
+  </div>
 <% else %>
-  <p>
-    <%= link_to "Sign in with Github", "/auth/github" %>
-  </p>
+  <div>
+    <h2>Link your GrooveHQ tickets to Github</h2>
+
+    <p>
+      <%= link_to "Sign in with Github", "/auth/github" %>
+    </p>
+  </div>
 <% end %>

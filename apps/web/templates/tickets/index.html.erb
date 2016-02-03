@@ -1,4 +1,3 @@
-<h1>Github/Groove</h1>
 <h2>Tickets</h2>
 
 <% if project.syncing %>
@@ -9,11 +8,7 @@
 <div id="tickets">
 <% if tickets.any? %>
   <% tickets.each do |ticket| %>
-    <article class="ticket">
-      <h5><%= ticket.title %></h5>
-      <p>#<%= ticket.number %></p>
-      <p><%= ticket.summary %></p>
-    </article>
+    <%= render partial: "tickets/ticket", locals: { ticket: ticket } %>
   <% end %>
 <% else %>
   <p class="placeholder">There are no tickets yet.</p>

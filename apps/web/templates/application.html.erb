@@ -8,6 +8,30 @@
     <%= favicon %>
   </head>
   <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="dropdown menu" data-dropdown-menu>
+          <li class="title"><strong><%= link_to "Github/Groove", "/" %></strong></li>
+          <% if signed_in? %>
+            <li><%= link_to "Tickets", "/tickets" %></li>
+            <li><%= link_to "Settings", "/project" %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <% if signed_in? %>
+            <% if current_user.image.present? %>
+              <li><%= image current_user.image, class: "avatar" %></li>
+            <% end %>
+            <li><span>Hi, <%= current_user.display_name %></span></li>
+            <li><%= link_to "Sign out", "/auth/signout" %></li>
+          <% else %>
+            <li><%= link_to "Sign in", "/auth/github" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
     <div class="flash-messages">
       <% %i(error notice success).each do |type| %>
         <% if flash[type] %>
@@ -16,12 +40,12 @@
       <% end %>
     </div>
 
-    <div class="container">
+    <main class="container">
       <div class="row">
         <div class="large-12 columns">
           <%= yield %>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

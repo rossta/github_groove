@@ -1,3 +1,30 @@
+main.container {
+  padding: 2em 0;
+}
+
+.top-bar .avatar {
+  width: 30px;
+  height: 30px;
+  margin: 0 1em;
+}
+
+.top-bar .top-bar-left {
+  padding-left: 1em;
+}
+
+.top-bar .top-bar-right {
+  padding-right: 1em;
+}
+
 form .row {
   padding: 0.5em 0;
+}
+
+article.ticket {
+  margin: 0 -1em;
+  padding: 1em;
+}
+
+article.ticket:nth-child(odd) {
+  background-color: ghostwhite;
 }

@@ -3,8 +3,12 @@ module Web::Views::Home
     include Web::View
 
     def link_to_project
-      act = current_user.project ? "Edit" : "Set up"
-      link_to "#{act} your project", "/project"
+      text = current_user.project ? "Project settings" : "Set up your project"
+      link_to text, "/project"
+    end
+
+    def link_to_tickets
+      link_to "View your tickets", "/tickets"
     end
   end
 end

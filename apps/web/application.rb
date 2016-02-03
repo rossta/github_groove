@@ -207,7 +207,14 @@ module Web
       #  * http://content-security-policy.com/
       #  * https://developer.mozilla.org/en-US/docs/Web/Security/CSP/Using_Content_Security_Policy
       #
-      security.content_security_policy "default-src 'none'; script-src 'self'; connect-src 'self'; img-src 'self'; style-src 'self'; font-src 'self';"
+      policies = []
+      policies << "default-src 'none'"
+      policies << "script-src 'self'"
+      policies << "connect-src 'self'"
+      policies << "img-src 'self' data: https://*.githubusercontent.com"
+      policies << "style-src 'self'"
+      policies << "font-src 'self'"
+      security.content_security_policy policies.join("; ") + ";"
 
       ##
       # FRAMEWORKS
