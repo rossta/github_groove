@@ -28,7 +28,7 @@ describe "Project" do
       UserRepository.update_user_project(UserRepository.first, project)
 
       visit "/"
-      click_link "Edit your project"
+      click_link "Settings"
 
       within "form" do
         fill_in "Groove access token", with: "aabbcc"
