@@ -1,5 +1,6 @@
 class TicketRepository
   include Hanami::Repository
+  include GithubGroove::Repositories::Pagination
 
   def self.find_by_project_and_number(project, number)
     query do
@@ -19,9 +20,9 @@ class TicketRepository
     end
   end
 
-  def self.all_by_project(project)
+  def self.all_by_project(project, params = {})
     query do
-      where(project_id: project.id)
+      where(project_id: project.id).desc(:number)
     end.all
   end
 end

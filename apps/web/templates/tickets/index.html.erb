@@ -9,10 +9,11 @@
 <div id="tickets">
 <% if tickets.any? %>
   <% tickets.each do |ticket| %>
-    <div class="ticket">
-      <h3><%= ticket.title %><span class="subtle"><%= ticket.number %></span></h3>
+    <article class="ticket">
+      <h5><%= ticket.title %></h5>
+      <p>#<%= ticket.number %></p>
       <p><%= ticket.summary %></p>
-    </div>
+    </article>
   <% end %>
 <% else %>
   <p class="placeholder">There are no tickets yet.</p>

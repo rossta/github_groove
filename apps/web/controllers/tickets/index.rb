@@ -9,7 +9,7 @@ module Web::Controllers::Tickets
 
     def call(params)
       @project = current_user.project
-      @tickets = @project.tickets
+      @tickets = @project.tickets(page: (params[:page] || 0))
     end
   end
 end
