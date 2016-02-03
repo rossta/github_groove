@@ -1,5 +1,5 @@
-require 'spec_helper'
-require_relative '../../../../apps/web/views/project/index'
+require "spec_helper"
+require_relative "../../../../apps/web/views/project/index"
 
 describe Web::Views::Project::Index do
   let(:params)    { Hanami::Action::Params.new({}) }
@@ -25,8 +25,8 @@ describe Web::Views::Project::Index do
 
     it "list project" do
       rendered.must_include("Groove Project Token")
-      rendered.scan(/class="project"/).count.must_equal 1
-      rendered.scan(/value="aaa"/).count.must_equal 1
+      rendered.scan(%r{class="project"}).count.must_equal 1
+      rendered.scan(%r{value="aaa"}).count.must_equal 1
     end
 
     it "hides the placeholder message" do

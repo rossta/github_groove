@@ -31,7 +31,7 @@ module MiniTest
           github_repository: github_repository))
     end
 
-    def create_ticket(title: 'Need help', number: 1, project_id: create_project.id)
+    def create_ticket(title: "Need help", number: 1, project_id: create_project.id)
       TicketRepository.create(
         Ticket.new(
           title: title,
@@ -45,11 +45,11 @@ module MiniTest
 
     def warden
       @warden ||= begin
-                    opts = -> {
-                      [404, { 'Content-Type' => 'text/plain' }, ['Not found!']]
-                    }
+                    opts = lambda do
+                      [404, { "Content-Type" => "text/plain" }, ["Not found!"]]
+                    end
                     manager = Warden::Manager.new(opts)
-                    Warden::Proxy.new({'rack.session' => {}}, manager)
+                    Warden::Proxy.new({ "rack.session" => {} }, manager)
                   end
     end
   end

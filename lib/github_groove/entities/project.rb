@@ -11,7 +11,7 @@ class Project
     self.syncing = true
     ProjectRepository.update(self)
 
-    SyncTicketsJob.perform_async(self.id)
+    SyncTicketsJob.perform_async(id)
   end
 
   def sync!
@@ -20,7 +20,7 @@ class Project
       TicketRepository.create_or_update_from_resource(self, resource)
     end
 
-    if self.syncing
+    if syncing
       self.syncing = false
       ProjectRepository.update(self)
     end

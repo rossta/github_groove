@@ -32,7 +32,7 @@ describe Web::Views::Tickets::Index do
       let(:exposures) { Hash[tickets: [ticket1, ticket2], project: project] }
 
       it "lists them all" do
-        rendered.scan(/class="ticket"/).count.must_equal 2
+        rendered.scan(%r{class="ticket"}).count.must_equal 2
         rendered.must_include("Need help")
         rendered.must_include("App not working")
       end

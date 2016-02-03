@@ -18,24 +18,24 @@ describe "Tickets" do
       visit "/tickets"
 
       within "#tickets" do
-        assert page.has_css?('.ticket', count: 2), "Expected to find 2 tickets"
+        assert page.has_css?(".ticket", count: 2), "Expected to find 2 tickets"
       end
     end
 
     it "syncs with GrooveHQ in the background" do
       ticket_data = { "tickets" => [
         { title: "Need help", number: 1 },
-        { title: "Having trouble", number: 2 },
-      ]}
+        { title: "Having trouble", number: 2 }
+      ] }
       stub_request(:get, "https://api.groovehq.com/v1/tickets").
-        to_return(:status => 200, :body => ticket_data.to_json, :headers => {})
+        to_return(status: 200, body: ticket_data.to_json, headers: {})
 
       visit "/tickets"
 
       click_link "Sync"
 
       within "#tickets" do
-        assert page.has_css?('.ticket', count: 2), "Expected to find 2 tickets"
+        assert page.has_css?(".ticket", count: 2), "Expected to find 2 tickets"
       end
     end
 

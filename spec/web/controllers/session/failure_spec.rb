@@ -1,9 +1,9 @@
-require 'spec_helper'
-require_relative '../../../../apps/web/controllers/session/failure'
+require "spec_helper"
+require_relative "../../../../apps/web/controllers/session/failure"
 
 describe Web::Controllers::Session::Failure do
   let(:action) { Web::Controllers::Session::Failure.new }
-  let(:params) { {'omniauth.auth' => {}, 'warden' => warden, 'rack.session' => {} } }
+  let(:params) { { "omniauth.auth" => {}, "warden" => warden, "rack.session" => {} } }
 
   it "it redirects" do
     response = action.call(params)

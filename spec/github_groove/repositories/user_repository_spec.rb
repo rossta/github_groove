@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe UserRepository do
   before do
@@ -14,7 +14,7 @@ describe UserRepository do
       user.id.wont_be_nil
       user.name.must_equal "Ross Kaffenberger"
       user.nickname.must_equal "rossta"
-      user.github_id.must_equal 11673
+      user.github_id.must_equal 11_673
       user.email.must_equal "ross@example.com"
       user.github_access_token.must_equal "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     end

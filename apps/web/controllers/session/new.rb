@@ -2,7 +2,7 @@ module Web::Controllers::Session
   class New
     include Web::Action
 
-    def call(params)
+    def call(_params)
       user = UserRepository.from_omniauth(request.env["omniauth.auth"])
 
       warden.set_user user

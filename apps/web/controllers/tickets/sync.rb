@@ -5,7 +5,7 @@ module Web::Controllers::Tickets
     before :authenticate!
     before :connected_to_groove!
 
-    def call(params)
+    def call(_params)
       flash[:message] = "Syncing in progress"
 
       current_user.project.background_sync!

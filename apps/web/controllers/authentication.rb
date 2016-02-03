@@ -16,7 +16,7 @@ module Web
     end
 
     def warden
-      request.env['warden']
+      request.env["warden"]
     end
 
     def authenticate!

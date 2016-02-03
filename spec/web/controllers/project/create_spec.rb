@@ -1,9 +1,9 @@
-require 'spec_helper'
-require_relative '../../../../apps/web/controllers/project/create'
+require "spec_helper"
+require_relative "../../../../apps/web/controllers/project/create"
 
 describe Web::Controllers::Project::Create do
   let(:action) { Web::Controllers::Project::Create.new }
-  let(:params) { Hash['warden' => warden] }
+  let(:params) { Hash["warden" => warden] }
 
   before do
     UserRepository.clear

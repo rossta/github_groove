@@ -3,7 +3,7 @@ require_relative "../../../../apps/web/controllers/tickets/index"
 
 describe Web::Controllers::Tickets::Index do
   let(:action) { Web::Controllers::Tickets::Index.new }
-  let(:params) { {'omniauth.auth' => {}, 'warden' => warden } }
+  let(:params) { { "omniauth.auth" => {}, "warden" => warden } }
 
   describe "authenticated" do
     before do

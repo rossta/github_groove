@@ -3,7 +3,7 @@ require_relative "../../../../apps/web/controllers/project/index"
 
 describe Web::Controllers::Project::Index do
   let(:action) { Web::Controllers::Project::Index.new }
-  let(:params) { Hash['warden' => warden] }
+  let(:params) { Hash["warden" => warden] }
 
   before do
     UserRepository.clear
@@ -12,9 +12,11 @@ describe Web::Controllers::Project::Index do
 
   describe "authenticated" do
     let(:project) { ProjectRepository.create(Project.new(groove_access_token: "aaa")) }
-    let(:user) { UserRepository.create(
-      User.new(github_id: 123, nickname: "rossta", project_id: project.id, github_access_token: "aaa")
-    )}
+    let(:user) do
+      UserRepository.create(
+        User.new(github_id: 123, nickname: "rossta", project_id: project.id, github_access_token: "aaa")
+    )
+    end
 
     before do
       warden.set_user user

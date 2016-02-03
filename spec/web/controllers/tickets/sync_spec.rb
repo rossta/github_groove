@@ -1,9 +1,9 @@
-require 'spec_helper'
-require_relative '../../../../apps/web/controllers/tickets/sync'
+require "spec_helper"
+require_relative "../../../../apps/web/controllers/tickets/sync"
 
 describe Web::Controllers::Tickets::Sync do
   let(:action) { Web::Controllers::Tickets::Sync.new }
-  let(:params) { {'omniauth.auth' => {}, 'warden' => warden } }
+  let(:params) { { "omniauth.auth" => {}, "warden" => warden } }
 
   describe "authenticated" do
     before do
@@ -13,14 +13,14 @@ describe Web::Controllers::Tickets::Sync do
       warden.set_user user
     end
 
-    it 'is successful' do
+    it "is successful" do
       response = action.call(params)
       response[0].must_equal 302
     end
   end
 
   describe "visitor" do
-    it 'throws warden' do
+    it "throws warden" do
       -> { action.call(params) }.must_throw :warden
     end
   end

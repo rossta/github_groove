@@ -7,8 +7,8 @@ module Web::Controllers::Project
 
     params do
       param :project do
-        param :groove_access_token,  presence: true
-        param :github_repository,  presence: true
+        param :groove_access_token, presence: true
+        param :github_repository, presence: true
       end
     end
 

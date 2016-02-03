@@ -116,3 +116,6 @@ Style/DotPosition:
 
 Style/ClassAndModuleChildren:
   Enabled: false
+
+Style/Lambda:
+  Enabled: false

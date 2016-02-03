@@ -20,7 +20,7 @@ class TicketRepository
     end
   end
 
-  def self.all_by_project(project, params = {})
+  def self.all_by_project(project, _params = {})
     query do
       where(project_id: project.id).desc(:number)
     end.all

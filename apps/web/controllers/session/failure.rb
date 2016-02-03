@@ -2,7 +2,7 @@ module Web::Controllers::Session
   class Failure
     include Web::Action
 
-    def call(params)
+    def call(_params)
       status 404, "Not found"
     end
   end

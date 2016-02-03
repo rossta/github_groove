@@ -11,4 +11,3 @@ module Vendor
     end
   end
 end
-

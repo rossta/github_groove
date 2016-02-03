@@ -46,7 +46,7 @@ Hanami::Model.configure do
       entity     User
       repository UserRepository
 
-      attribute :id,   Integer
+      attribute :id, Integer
       attribute :github_id, Integer
       attribute :name, String
       attribute :nickname, String
@@ -79,13 +79,13 @@ Hanami::Mailer.configure do
   end
 end.load!
 
-Warden::Manager.serialize_into_session do |user|
-  user.id
-end
+Warden::Manager.serialize_into_session(&:id)
 
 Warden::Manager.serialize_from_session do |id|
   UserRepository.find(id)
 end
 
 SuckerPunch.logger = Logger.new(STDOUT)
-SuckerPunch.exception_handler = -> (ex, klass, args) { SuckerPunch.logger.info("#{klass}: #{args.inspect} " + ex.message) }
+SuckerPunch.exception_handler = -> (ex, klass, args) {
+  SuckerPunch.logger.info("#{klass}: #{args.inspect} " + ex.message)
+}
