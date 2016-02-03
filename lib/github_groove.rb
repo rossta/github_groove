@@ -63,6 +63,7 @@ Hanami::Model.configure do
       attribute :id, Integer
       attribute :groove_access_token, String
       attribute :github_repository, String
+      attribute :syncing, Boolean
     end
   end
 end.load!
@@ -86,3 +87,4 @@ Warden::Manager.serialize_from_session do |id|
   UserRepository.find(id)
 end
 
+SuckerPunch.logger = Logger.new(STDOUT)

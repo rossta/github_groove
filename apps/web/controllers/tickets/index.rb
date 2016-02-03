@@ -2,10 +2,14 @@ module Web::Controllers::Tickets
   class Index
     include Web::Action
 
+    expose :project
     expose :tickets
 
+    before :connected_to_groove!
+
     def call(params)
-      @tickets = TicketRepository.all
+      @project = current_user.project
+      @tickets = @project.tickets
     end
   end
 end

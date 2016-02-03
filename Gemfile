@@ -2,6 +2,7 @@ source "https://rubygems.org"
 
 gem "bundler"
 gem "rake"
+gem "puma"
 gem "hanami",       "0.7.0"
 gem "hanami-model", "~> 0.5"
 gem "pg"
@@ -11,6 +12,8 @@ gem "groovehq", github: "rossta/groovehq", branch: "paginated_collection"
 gem "omniauth-github", github: "intridea/omniauth-github"
 gem "warden"
 gem "octokit"
+
+gem "sucker_punch", "~> 2.0"
 
 group :test do
   gem "minitest"

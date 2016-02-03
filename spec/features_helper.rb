@@ -10,5 +10,10 @@ Capybara.app = Hanami::Container.new
 module MiniTest
   class Spec
     include Capybara::DSL
+
+    def sign_in
+      visit "/"
+      click_link "Sign in"
+    end
   end
 end

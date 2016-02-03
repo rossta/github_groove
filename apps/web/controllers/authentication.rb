@@ -22,5 +22,13 @@ module Web
     def authenticate!
       warden.authenticate!
     end
+
+    def connected_to_groove!
+      return true if current_user.project_id
+
+      flash[:message] = "Please connect to Groove first"
+
+      redirect_to "/project"
+    end
   end
 end

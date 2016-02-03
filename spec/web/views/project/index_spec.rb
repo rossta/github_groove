@@ -3,7 +3,7 @@ require_relative '../../../../apps/web/views/project/index'
 
 describe Web::Views::Project::Index do
   let(:params)    { Hanami::Action::Params.new({}) }
-  let(:exposures) { Hash[project: nil, params: params] }
+  let(:exposures) { Hash[project: nil, tickets: [], params: params] }
   let(:template)  { Hanami::View::Template.new("apps/web/templates/project/index.html.erb") }
   let(:view)      { Web::Views::Project::Index.new(template, exposures) }
   let(:rendered)  { view.render }

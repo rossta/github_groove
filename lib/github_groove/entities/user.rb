@@ -13,6 +13,10 @@ class User
     @project ||= ProjectRepository.find(project_id)
   end
 
+  def tickets
+    project && project.tickets
+  end
+
   def repo
     return nil unless project && project.github_repository
 

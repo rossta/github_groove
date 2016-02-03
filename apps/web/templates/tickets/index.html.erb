@@ -1,6 +1,11 @@
 <h1>Github/Groove</h1>
 <h2>Tickets</h2>
 
+<% if project.syncing %>
+  <p class="paused">Background sync in progress. Please be patient.</p>
+<% else %>
+  <p class="sync"><%= link_to "Sync with Groove", "/sync/tickets" %></p>
+<% end %>
 <div id="tickets">
 <% if tickets.any? %>
   <% tickets.each do |ticket| %>

@@ -5,21 +5,26 @@ describe Web::Controllers::Tickets::Index do
   let(:action) { Web::Controllers::Tickets::Index.new }
   let(:params) { {'omniauth.auth' => {}, 'warden' => warden } }
 
-  before do
-    TicketRepository.clear
-    ProjectRepository.clear
+  describe "authenticated" do
+    before do
+      user = authenticated_user
+      warden.set_user user
 
-    project = ProjectRepository.create(Project.new(groove_access_token: "aaa"))
-    @ticket = TicketRepository.create(Ticket.new(title: "Need help", number: 1, project_id: project.id))
-  end
+      @project = create_project
+      user.project_id = @project.id
+      UserRepository.update(user)
+      @ticket = create_ticket(title: "Need help", number: 1, project_id: @project.id)
+    end
 
-  it "is successful" do
-    response = action.call(params)
-    response[0].must_equal 200
-  end
+    it "is successful" do
+      response = action.call(params)
+      response[0].must_equal 200
+    end
 
-  it "exposes all tickets" do
-    action.call(params)
-    action.exposures[:tickets].must_equal [@ticket]
+    it "exposes project tickets" do
+      action.call(params)
+      action.exposures[:tickets].must_equal [@ticket]
+      action.exposures[:project].must_equal @project
+    end
   end
 end

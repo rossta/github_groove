@@ -1,15 +1,9 @@
 require "features_helper"
 
 describe "Project" do
-  before do
-    ProjectRepository.clear
-    UserRepository.clear
-  end
-
   describe "logged-in user" do
     before do
-      visit "/"
-      click_link "Sign in"
+      sign_in
     end
 
     it "can create project" do
