@@ -5,6 +5,7 @@ Hanami::Model.migration do
 
       column :github_id, String, null: false
       column :github_url, String, null: false
+      column :github_number, String, null: false
       column :github_state, String, null: false
       foreign_key :ticket_id, null: false
 

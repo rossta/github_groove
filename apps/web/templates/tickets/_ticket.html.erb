@@ -2,11 +2,15 @@
   <h5><%= ticket.title %></h5>
   <p>#<%= ticket.number %></p>
   <p><%= ticket.summary %></p>
+  <% if ticket.issue %>
+    <%= link_to "View issue on Github", ticket.issue.github_url, class: "button small secondary" %>
+  <% else %>
   <p>
     <%=
-      form_for :ticket, routes.ticket_issues_path(ticket.id), method: :put do
+      form_for :ticket, routes.ticket_issues_path(ticket.id) do
         submit "Create Github issue", class: "button small"
       end
     %>
-</p>
+  </p>
+  <% end %>
 </article>

@@ -25,4 +25,10 @@ class TicketRepository
       where(project_id: project.id).desc(:number)
     end.all
   end
+
+  def self.find_project_ticket(project, id)
+    query do
+      where(project_id: project.id, id: id)
+    end.first
+  end
 end

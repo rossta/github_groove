@@ -73,6 +73,7 @@ Hanami::Model.configure do
       attribute :id, Integer
       attribute :github_id, Integer
       attribute :github_state, String
+      attribute :github_number, Integer
       attribute :github_url, String
       attribute :ticket_id, Integer
     end

@@ -18,6 +18,10 @@ class Ticket
     @project ||= ProjectRepository.find(project_id)
   end
 
+  def issue
+    @project ||= IssueRepository.find_issue_by_ticket_id(id)
+  end
+
   def create_issue(repo)
     resource = repo.create_issue(*to_issue_data)
     IssueRepository.create_from_api(self, resource)

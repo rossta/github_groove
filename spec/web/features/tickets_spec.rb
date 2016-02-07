@@ -55,7 +55,8 @@ describe "Tickets" do
     end
 
     it "creates a ticket on github" do
-      create_ticket(title: "Need help", number: 1, project_id: project.id)
+      ticket = create_ticket(title: "Need help", number: 1, project_id: project.id)
+      stub_github_issue_request(ticket)
 
       visit "/tickets"
 
@@ -67,7 +68,12 @@ describe "Tickets" do
 
       ticket = TicketRepository.last
       ticket.number.must_equal 1
-      ticket.github_issue.must_equal "abcd"
+
+      issue = ticket.issue
+      issue.github_id.must_equal 101 # github_issue_response["id"]
+      issue.github_number.must_equal 1347 # github_issue_response["number"]
+      issue.github_state.must_equal "open" # github_issue_response["state"]
+      issue.github_url.must_equal github_issue_response["url"]
     end
   end
 end

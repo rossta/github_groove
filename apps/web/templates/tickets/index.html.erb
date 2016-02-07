@@ -1,9 +1,9 @@
 <h2>Tickets</h2>
 
 <% if project.syncing %>
-  <p class="paused">Background sync in progress. Please be patient.</p>
+  <p class="paused">Background sync in progress. Please be patient. <%= link_to "Refresh", routes.tickets_path %></p>
 <% else %>
-  <p class="sync"><%= link_to "Sync with Groove", "/sync/tickets" %></p>
+  <p class="sync"><%= link_to "Sync with Groove", routes.sync_tickets_path %></p>
 <% end %>
 <div id="tickets">
 <% if tickets.any? %>

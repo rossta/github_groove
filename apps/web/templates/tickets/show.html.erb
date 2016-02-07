@@ -1,0 +1,10 @@
+<h2>Ticket</h2>
+
+<% if project.syncing %>
+  <p class="paused">Background sync in progress. Please be patient.</p>
+<% else %>
+  <p class="sync"><%= link_to "Sync with Groove", "/sync/tickets" %></p>
+<% end %>
+<div id="tickets">
+  <%= render partial: "tickets/ticket", locals: { ticket: ticket } %>
+</div>

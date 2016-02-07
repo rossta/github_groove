@@ -7,7 +7,7 @@ post "/project", to: 'project#create'
 
 post "/ticket/:ticket_id/issues", to: "issues#create", as: :ticket_issues
 
-get "/sync/tickets", to: "tickets#sync"
+get "/sync/tickets", to: "tickets#sync", as: :sync_tickets
 
 resources :tickets, only: [:index, :show]
 
