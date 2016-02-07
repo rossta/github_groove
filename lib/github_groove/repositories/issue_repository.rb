@@ -7,7 +7,7 @@ class IssueRepository
       ticket_id: ticket.id,
       github_id: resource.id.to_s,
       github_number: resource.number.to_s,
-      github_url: resource.rels[:self].href,
+      github_url: resource.rels[:html].href,
       github_state: resource.state
     )
     create(issue)

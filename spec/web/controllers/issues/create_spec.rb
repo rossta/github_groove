@@ -33,7 +33,8 @@ describe Web::Controllers::Issues::Create do
       issue.github_id.must_equal 101
       issue.github_number.must_equal 1347
       issue.github_state.must_equal "open"
-      issue.github_url.must_equal github_issue_response["url"]
+      issue.github_url.length.must_be :>, 0
+      issue.github_url.must_equal github_issue_response["html_url"]
     end
   end
 

@@ -71,9 +71,6 @@ describe "Tickets" do
 
       issue = ticket.issue
       issue.github_id.must_equal 101 # github_issue_response["id"]
-      issue.github_number.must_equal 1347 # github_issue_response["number"]
-      issue.github_state.must_equal "open" # github_issue_response["state"]
-      issue.github_url.must_equal github_issue_response["url"]
     end
   end
 end
