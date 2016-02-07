@@ -23,12 +23,20 @@ module Web
       warden.authenticate!
     end
 
-    def connected_to_groove!
-      return true if current_user.project_id
+    def project_ready!
+      return true if current_project_ready?
 
-      flash[:message] = "Please connect to Groove first"
+      flash[:message] = "Please connect with Groove and Github first"
 
       redirect_to "/project"
+    end
+
+    def current_project_ready?
+      current_project && current_project.ready?
+    end
+
+    def current_project
+      current_user && current_user.project
     end
   end
 end

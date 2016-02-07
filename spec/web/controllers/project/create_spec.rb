@@ -5,11 +5,6 @@ describe Web::Controllers::Project::Create do
   let(:action) { Web::Controllers::Project::Create.new }
   let(:params) { Hash["warden" => warden] }
 
-  before do
-    UserRepository.clear
-    ProjectRepository.clear
-  end
-
   describe "authenticated" do
     let(:project_params) { Hash[project: { groove_access_token: "aabbcc", github_repository: "rossta/github_groove" }] }
 

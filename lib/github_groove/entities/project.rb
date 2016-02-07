@@ -3,8 +3,16 @@ class Project
 
   attributes :groove_access_token, :github_repository, :syncing
 
+  def ready?
+    groove_access_token.present? && github_repository.present?
+  end
+
   def tickets(params = {})
     TicketRepository.all_by_project(self, params)
+  end
+
+  def default_issue_labels
+    ['groove']
   end
 
   def background_sync!

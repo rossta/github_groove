@@ -8,7 +8,7 @@ class UserRepository
   end
 
   def self.from_omniauth(omniauth)
-    github_id = omniauth.uid.to_i
+    github_id = omniauth.uid
     found = find_by_github_id(github_id)
 
     attrs = {}

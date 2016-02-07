@@ -25,21 +25,5 @@ describe Web::Views::Tickets::Index do
         rendered.must_include("<p class=\"placeholder\">There are no tickets yet.</p>")
       end
     end
-
-    describe "when there are tickets" do
-      let(:ticket1)     { Ticket.new(title: "Need help", number: 1) }
-      let(:ticket2)     { Ticket.new(title: "App not working", number: 2) }
-      let(:exposures) { Hash[tickets: [ticket1, ticket2], project: project] }
-
-      it "lists them all" do
-        rendered.scan(%r{class="ticket"}).count.must_equal 2
-        rendered.must_include("Need help")
-        rendered.must_include("App not working")
-      end
-
-      it "hides the placeholder message" do
-        rendered.wont_include("<p class=\"placeholder\">There are no tickets yet.</p>")
-      end
-    end
   end
 end

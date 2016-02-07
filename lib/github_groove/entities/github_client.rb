@@ -7,6 +7,10 @@ class GithubClient
     client.repo(*args)
   end
 
+  def create_issue(*args)
+    client.create_issue(*args)
+  end
+
   def client
     @client ||= Octokit::Client.new(access_token: @access_token)
   end

@@ -18,6 +18,7 @@ module MiniTest
       UserRepository.clear
       TicketRepository.clear
       ProjectRepository.clear
+      IssueRepository.clear
     end
 
     def authenticated_user

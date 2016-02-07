@@ -32,10 +32,10 @@
         </ul>
       </div>
     </div>
-    <div class="flash-messages">
+    <div class="flash-messages row" style="padding-top:1em">
       <% %i(error notice success).each do |type| %>
         <% if flash[type] %>
-          <div class="flash-message-<%= type %>"> <%= flash[type] %> </div>
+          <br /><div class="callout <%= type %>"> <%= flash[type] %> </div>
         <% end %>
       <% end %>
     </div>

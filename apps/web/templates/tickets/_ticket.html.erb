@@ -2,4 +2,11 @@
   <h5><%= ticket.title %></h5>
   <p>#<%= ticket.number %></p>
   <p><%= ticket.summary %></p>
+  <p>
+    <%=
+      form_for :ticket, routes.ticket_issues_path(ticket.id), method: :put do
+        submit "Create Github issue", class: "button small"
+      end
+    %>
+</p>
 </article>

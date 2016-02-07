@@ -3,7 +3,7 @@ module Web::Controllers::Tickets
     include Web::Action
 
     before :authenticate!
-    before :connected_to_groove!
+    before :project_ready!
 
     def call(_params)
       flash[:message] = "Syncing in progress"

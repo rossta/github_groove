@@ -65,6 +65,17 @@ Hanami::Model.configure do
       attribute :github_repository, String
       attribute :syncing, Boolean
     end
+
+    collection :issues do
+      entity Issue
+      repository IssueRepository
+
+      attribute :id, Integer
+      attribute :github_id, Integer
+      attribute :github_state, String
+      attribute :github_url, String
+      attribute :ticket_id, Integer
+    end
   end
 end.load!
 

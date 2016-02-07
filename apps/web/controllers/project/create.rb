@@ -17,7 +17,7 @@ module Web::Controllers::Project
         @project = ProjectRepository.find_or_create_by_params(params[:project])
         UserRepository.update_user_project(current_user, @project)
 
-        flash[:notice] = "Your project has been saved: #{current_user.project_id}"
+        flash[:notice] = "Your project has been saved!"
 
         redirect_to "/project"
       end

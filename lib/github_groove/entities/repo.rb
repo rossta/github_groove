@@ -8,6 +8,10 @@ class Repo
     @resource || fetch
   end
 
+  def create_issue(title, body, opts = {})
+    @client.create_issue(@name, title, body, opts)
+  end
+
   def fetch
     @resource = @client.repo(@name)
   end

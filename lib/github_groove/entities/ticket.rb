@@ -11,6 +11,29 @@ class Ticket
       priority: resource.priority
     )
   end
+
+  def project
+    return nil unless project_id
+
+    @project ||= ProjectRepository.find(project_id)
+  end
+
+  def create_issue(repo)
+    resource = repo.create_issue(*to_issue_data)
+    IssueRepository.create_from_api(self, resource)
+  end
+
+  def to_issue_data
+    [title, issue_summary, labels: project.default_issue_labels]
+  end
+
+  # Append link for Github/Groove ticket page
+  # to Github summary
+  #
+  def issue_summary
+    footer = "\n\n[View more info on Github/Groove](#{Web::Routes.ticket_url(id)})"
+    [summary, footer].compact.join
+  end
 end
 
 # Hash from API

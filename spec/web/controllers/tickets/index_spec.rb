@@ -11,8 +11,7 @@ describe Web::Controllers::Tickets::Index do
       warden.set_user user
 
       @project = create_project
-      user.project_id = @project.id
-      UserRepository.update(user)
+      UserRepository.update_user_project(user, @project)
       @ticket = create_ticket(title: "Need help", number: 1, project_id: @project.id)
     end
 

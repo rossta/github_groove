@@ -6,8 +6,7 @@ describe "Tickets" do
     let(:project) { create_project }
 
     before do
-      user.project_id = project.id
-      UserRepository.update(user)
+      UserRepository.update_user_project(user, project)
       sign_in
     end
 
@@ -53,6 +52,22 @@ describe "Tickets" do
       visit "/tickets"
 
       page.wont_have_content("Background sync in progress. Please be patient")
+    end
+
+    it "creates a ticket on github" do
+      create_ticket(title: "Need help", number: 1, project_id: project.id)
+
+      visit "/tickets"
+
+      within ".ticket" do
+        click_button "Create Github issue"
+      end
+
+      page.must_have_content("View issue")
+
+      ticket = TicketRepository.last
+      ticket.number.must_equal 1
+      ticket.github_issue.must_equal "abcd"
     end
   end
 end

@@ -5,7 +5,7 @@ module Web::Controllers::Tickets
     expose :project
     expose :tickets
 
-    before :connected_to_groove!
+    before :project_ready!
 
     def call(params)
       @project = current_user.project
