@@ -28,3 +28,7 @@ article.ticket {
 article.ticket:nth-child(odd) {
   background-color: ghostwhite;
 }
+
+.button.secondary {
+  background-color: #888;
+}
