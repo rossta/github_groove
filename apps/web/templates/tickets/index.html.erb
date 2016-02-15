@@ -2,6 +2,7 @@
 
 <% if project.syncing %>
   <p class="paused">Background sync in progress. Please be patient. <%= link_to "Refresh", routes.tickets_path %></p>
+  <p class="sync"><%= link_to "Try again", routes.sync_tickets_path %></p>
 <% else %>
   <p class="sync"><%= link_to "Sync with Groove", routes.sync_tickets_path %></p>
 <% end %>
