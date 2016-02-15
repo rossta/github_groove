@@ -271,12 +271,12 @@ module Web
         # Don't compile static assets in production mode (eg. Sass, ES6)
         #
         # See: http://www.rubydoc.info/gems/hanami-assets#Configuration
-        compile false
+        # compile false
 
         # Use digest file name for asset paths
         #
         # See: http://hanamirb.org/guides/assets/digest
-        digest  true
+        # digest  true
 
         # Content Delivery Network (CDN)
         #

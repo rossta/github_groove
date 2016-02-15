@@ -2,3 +2,4 @@
 /db/github_groove_test
 /public/assets*
 /tmp
+.env.production
