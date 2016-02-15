@@ -1,3 +1,5 @@
+require_relative "../jobs/sync_tickets_job"
+
 class Project
   include Hanami::Entity
 
