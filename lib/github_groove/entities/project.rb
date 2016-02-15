@@ -1,4 +1,5 @@
 require_relative "../jobs/sync_tickets_job"
+require_relative "../vendor/groove"
 
 class Project
   include Hanami::Entity
