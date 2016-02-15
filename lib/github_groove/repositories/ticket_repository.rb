@@ -1,3 +1,5 @@
+require_relative "./pagination"
+
 class TicketRepository
   include Hanami::Repository
   include GithubGroove::Repositories::Pagination
