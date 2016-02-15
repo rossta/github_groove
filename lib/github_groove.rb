@@ -2,6 +2,9 @@ require "hanami/model"
 require "hanami/mailer"
 Dir["#{__dir__}/github_groove/**/*.rb"].each { |file| require_relative file }
 
+module GithubGroove
+end
+
 Hanami::Model.configure do
   ##
   # Database adapter

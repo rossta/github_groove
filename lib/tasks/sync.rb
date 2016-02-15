@@ -1,5 +1,3 @@
-require "pry"
-
 namespace :sync do
   desc "Sync most recent tickets with GrooveHQ"
   task tickets: :environment do
