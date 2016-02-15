@@ -11,11 +11,12 @@
     <div class="top-bar">
       <div class="top-bar-left">
         <ul class="dropdown menu" data-dropdown-menu>
-          <li class="title"><strong><%= link_to "Github/Groove", "/" %></strong></li>
+          <li><strong><%= link_to "Github/Groove", "/" %></strong></li>
           <% if signed_in? %>
             <li><%= link_to "Tickets", "/tickets" %></li>
             <li><%= link_to "Settings", "/project" %></li>
           <% end %>
+          <li><%= link_to "Source", "https://github.com/rossta/github_groove" %></li>
         </ul>
       </div>
       <div class="top-bar-right">
