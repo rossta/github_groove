@@ -228,6 +228,7 @@ module Web
       controller.prepare do
         # include MyAuthentication # included in all the actions
         # before :authenticate!    # run an authentication before callback
+        require_relative "./controllers/authentication"
         include Web::Authentication
 
         expose :flash
