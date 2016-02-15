@@ -8,7 +8,7 @@ module Web::Controllers::Tickets
     def call(_params)
       flash[:message] = "Syncing in progress"
 
-      current_user.project.background_sync!
+      current_user.project.sync!
 
       redirect_to "/tickets"
     end
