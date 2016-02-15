@@ -3,3 +3,4 @@
 /public/assets*
 /tmp
 .env.production
+/tmp
