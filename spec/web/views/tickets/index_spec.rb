@@ -2,10 +2,11 @@ require "spec_helper"
 require_relative "../../../../apps/web/views/tickets/index"
 
 describe Web::Views::Tickets::Index do
-  let(:exposures) { Hash[tickets: [], project: project] }
+  let(:exposures) { Hash[tickets: [], project: project, format: :html] }
   let(:template)  { Hanami::View::Template.new("apps/web/templates/tickets/index.html.erb") }
   let(:view)      { Web::Views::Tickets::Index.new(template, exposures) }
   let(:rendered)  { view.render }
+  # let(:rendered)  { Web::Views::Tickets::Index.render(exposures.merge(format: :html)) }
 
   let(:project) { ProjectRepository.create(Project.new(groove_access_token: "aaa")) }
 
@@ -27,9 +28,9 @@ describe Web::Views::Tickets::Index do
     end
 
     describe "when there are tickets" do
-      let(:ticket1)     { Ticket.new(title: "Need help", number: 1) }
-      let(:ticket2)     { Ticket.new(title: "App not working", number: 2) }
-      let(:exposures) { Hash[tickets: [ticket1, ticket2], project: project] }
+      let(:ticket1)     { Ticket.new(id: 1, title: "Need help", number: 1) }
+      let(:ticket2)     { Ticket.new(id: 2, title: "App not working", number: 2) }
+      let(:exposures) { Hash[tickets: [ticket1, ticket2], project: project, params: {}] }
 
       it "lists them all" do
         rendered.scan(%r{class="ticket"}).count.must_equal 2
