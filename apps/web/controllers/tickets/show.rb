@@ -5,7 +5,7 @@ module Web::Controllers::Tickets
     expose :project
     expose :ticket
 
-    before :project_ready!
+    before :assert_project_ready!
 
     def call(params)
       @project = current_user.project

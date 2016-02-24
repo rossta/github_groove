@@ -3,7 +3,7 @@ module Web::Controllers::Issues
     include Web::Action
 
     before :authenticate!
-    before :project_ready!
+    before :assert_project_ready!
 
     def call(params)
       @ticket = TicketRepository.find(params[:ticket_id])

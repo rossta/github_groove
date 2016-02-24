@@ -23,7 +23,7 @@ module Web
       warden.authenticate!
     end
 
-    def project_ready!
+    def assert_project_ready!
       return true if current_project_ready?
 
       flash[:message] = "Please connect with Groove and Github first"
