@@ -44,7 +44,7 @@ GEM
     dotenv (2.1.0)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
-    hanami (0.7.0)
+    hanami (0.7.2)
       bundler (~> 1.6)
       dotenv (~> 2.0)
       hanami-assets (~> 0.2)
@@ -56,11 +56,11 @@ GEM
       hanami-view (~> 0.6)
       shotgun (~> 0.9)
       thor (~> 0.19)
-    hanami-assets (0.2.0)
+    hanami-assets (0.2.1)
       hanami-helpers (~> 0.3)
       hanami-utils (~> 0.7)
       tilt (~> 2.0, >= 2.0.2)
-    hanami-controller (0.6.0)
+    hanami-controller (0.6.1)
       hanami-utils (~> 0.7)
       hanami-validations (~> 0.5)
       rack (~> 1.6, >= 1.6.2)
@@ -73,13 +73,13 @@ GEM
     hanami-model (0.6.0)
       hanami-utils (~> 0.7)
       sequel (~> 4.9)
-    hanami-router (0.6.1)
+    hanami-router (0.6.2)
       hanami-utils (~> 0.7)
       http_router (~> 0.11)
-    hanami-utils (0.7.0)
+    hanami-utils (0.7.1)
     hanami-validations (0.5.0)
       hanami-utils (~> 0.7)
-    hanami-view (0.6.0)
+    hanami-view (0.6.1)
       hanami-utils (~> 0.7)
       tilt (~> 2.0, >= 2.0.1)
     hashdiff (0.2.3)
@@ -101,7 +101,7 @@ GEM
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
     method_source (0.8.2)
-    mime-types (2.99)
+    mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
@@ -183,8 +183,8 @@ DEPENDENCIES
   capybara
   capybara_minitest_spec
   groovehq!
-  hanami (= 0.7.0)
-  hanami-model (~> 0.5)
+  hanami (= 0.7.2)
+  hanami-model
   launchy
   m
   minitest
