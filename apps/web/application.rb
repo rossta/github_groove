@@ -85,7 +85,7 @@ module Web
 
       middleware.use OmniAuth::Builder do
         provider :github, ENV["GITHUB_CLIENT_KEY"], ENV["GITHUB_CLIENT_SECRET"],
-          scope: "user:email,repo"
+          scope: "user:email,public_repo"
       end
 
       # Default format for the requests that don't specify an HTTP_ACCEPT header
