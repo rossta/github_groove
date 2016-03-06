@@ -8,7 +8,7 @@ gem "hanami-model"
 gem "pg"
 
 gem "pony"
-gem "groovehq", github: "rossta/groovehq", branch: "paginated_collection"
+gem "groovehq", github: "Fodoj/groovehq"
 gem "omniauth-github", github: "intridea/omniauth-github"
 gem "warden"
 gem "octokit"

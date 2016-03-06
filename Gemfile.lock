@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/Fodoj/groovehq.git
+  revision: 80fe03241181b73e2b6586528b0da987e17c9393
+  specs:
+    groovehq (1.0.6)
+      activesupport
+      httparty
+
+GIT
   remote: git://github.com/intridea/omniauth-github.git
   revision: 45f2fc73d6d06f30863adac0e6aa112bcaaadf67
   specs:
@@ -6,19 +14,10 @@ GIT
       omniauth (~> 1.0)
       omniauth-oauth2 (>= 1.1.1, < 2.0)
 
-GIT
-  remote: git://github.com/rossta/groovehq.git
-  revision: 1143207488cf3b379170cd525c06494c8b8f22b2
-  branch: paginated_collection
-  specs:
-    groovehq (1.0.5)
-      activesupport
-      httparty
-
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (4.2.5.1)
+    activesupport (4.2.5.2)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       minitest (~> 5.1)
